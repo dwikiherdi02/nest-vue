@@ -1,0 +1,568 @@
+{
+	"info": {
+		"_postman_id": "9789dca9-2524-45ab-a156-dd929d53e9f5",
+		"name": "Kaleb Code Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5201202"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Dwiki Herdiansyah\",\r\n    \"username\": \"dddwiki\",\r\n    \"password\": \"12341234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/auth/signup",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201 - created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Dwiki Herdiansyah\",\r\n    \"username\": \"dddwiki\",\r\n    \"password\": \"12341234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/auth/signup",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "434"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b2-2kXYMYJKRIDPvlgvf1ecydukWbU\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jun 2024 23:28:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"code\": 201,\n    \"path\": \"/auth/signup\",\n    \"result\": {\n        \"data\": {\n            \"name\": \"Dwiki Herdiansyah\",\n            \"username\": \"dddwiki\"\n        },\n        \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRHdpa2kgSGVyZGlhbnN5YWgiLCJ1c2VybmFtZSI6ImRkZHdpa2kiLCJwYXNzd29yZCI6IiQyYiQxMCR4bWM5WEhjc3h4Skt3MXRPcExVR20uWGowVFpveXVDSzBxNVRhMW9BREdnUDJTcEJyc1B3YSIsImlkIjoxLCJpYXQiOjE3MTg0MDc3MjksImV4cCI6MTcxODQxMTMyOX0.2H4i-pyuSDGNURBZ8jl8AVYiAoDfIYzwf0qhTXsjAxM\"\n    }\n}"
+				},
+				{
+					"name": "406 - error validation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Dwiki Herdiansyah\",\r\n    \"username\": \"dddwiki\",\r\n    \"password\": \"12341234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/auth/signup",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"status": "Not Acceptable",
+					"code": 406,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "96"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"60-RHKur2mCS7TdvKCGyptUWNW9Fe4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jun 2024 23:31:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"code\": 406,\n    \"path\": \"/auth/signup\",\n    \"message\": \"username 'dddwiki' already exists.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "SignIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"dddwiki\",\r\n    \"password\": \"12341234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/auth/signin",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "404 - error not found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"dddwikix\",\r\n    \"password\": \"12341234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/auth/signin",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5c-xJb3mDKtdBvlV4vaJldiEyo9nx0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jun 2024 23:49:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"code\": 404,\n    \"path\": \"/auth/signin\",\n    \"message\": \"Username 'dddwikix' not found.\"\n}"
+				},
+				{
+					"name": "200 - success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"dddwiki\",\r\n    \"password\": \"12341234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/auth/signin",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "434"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b2-jwAjBSiOwXLuvDJvzDMXKOZ8Bu4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 15 Jun 2024 00:00:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"path\": \"/auth/signin\",\n    \"result\": {\n        \"data\": {\n            \"name\": \"Dwiki Herdiansyah\",\n            \"username\": \"dddwiki\"\n        },\n        \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkR3aWtpIEhlcmRpYW5zeWFoIiwidXNlcm5hbWUiOiJkZGR3aWtpIiwicGFzc3dvcmQiOiIkMmIkMTAkeG1jOVhIY3N4eEpLdzF0T3BMVUdtLlhqMFRab3l1Q0swcTVUYTFvQURHZ1AyU3BCcnNQd2EiLCJpYXQiOjE3MTg0MDk2NDksImV4cCI6MTcxODQxMzI0OX0.cI8C8SUmEFzRdSpea5T7lO9fuhlmYYrp_wRyvrjWcYk\"\n    }\n}"
+				},
+				{
+					"name": "406 - error validation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"dddwiki\",\r\n    \"password\": \"12341234x\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/auth/signin",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "Not Acceptable",
+					"code": 406,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5c-PUMkxk1wpLrKTUEQ5SdCDyOU3+U\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 15 Jun 2024 00:02:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"code\": 406,\n    \"path\": \"/auth/signin\",\n    \"message\": \"Incorect username or password.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Me",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/auth/me",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "401 - error unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/auth/me",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "70"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"46-oHqduN+CL21+0UjJhV6CevaA84A\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 15 Jun 2024 01:13:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"code\": 401,\n    \"path\": \"/auth/me\",\n    \"message\": \"Unauthorized\"\n}"
+				},
+				{
+					"name": "200 - success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/auth/me",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "110"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6e-bcu93fK+2HBQTQklYNnVU8z6bFM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 15 Jun 2024 01:22:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"path\": \"/auth/me\",\n    \"result\": {\n        \"id\": 1,\n        \"name\": \"Dwiki Herdiansyah\",\n        \"username\": \"dddwiki\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "http://172.31.227.149:3001",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkR3aWtpIEhlcmRpYW5zeWFoIiwidXNlcm5hbWUiOiJkZGR3aWtpIiwiaWF0IjoxNzE4NDE0MDI0LCJleHAiOjE3MTg0MjEyMjR9.rSMDOON19WD9V4AGHQImFLG9S_gQ2bgXogKvLtQz5q0",
+			"type": "string"
+		}
+	]
+}
